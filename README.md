@@ -15,6 +15,9 @@ A small side project of mine to automate as much as possible in my house that I'
 ## What's working so far
  - Switching on PC
  - Turning on music
+ - Torrents (Using transmission-daemon and transmission-remote | Setup coming soon):
+ 	- Switch on at 23h00
+ 	- Switch off at 15h00
  - send emails when:
  	- The external IP address changes of my torrent server
  	- The ethernet port goes down and up again
@@ -26,6 +29,8 @@ A small side project of mine to automate as much as possible in my house that I'
  	- Everything that involves scripts which interact with other PC's in my house
  - filesystem [not of use yet]
  	- General mounting of file systems
+ - torrents
+ 	- Everything regarding my torrent downloads
 
 ## Misc
 
@@ -42,9 +47,5 @@ I have some scripts run via crontab
 	*/1 * * * * python /root/scripts/network_pc/phone.py
 	*/10 * * * * /root/scripts/network/check_ip
 	0 6 * * * /root/scripts/network_pc/pc_off_night
-
-phone.py will run every minute
-
-check_ip will run ever 10 minutes
-
-pc_off_night will run at 06h00
+	0 23 * * * /root/scripts/torrents/switch_on
+	0 15 * * * /root/scripts/torrents/switch_off
