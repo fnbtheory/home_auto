@@ -41,7 +41,10 @@ I have some scripts run via crontab
 
 	*/1 * * * * python /root/scripts/network_pc/phone.py
 	*/10 * * * * /root/scripts/network/check_ip
+	0 6 * * * /root/scripts/network_pc/pc_off_night
 
 phone.py will run every minute
 
 check_ip will run ever 10 minutes
+
+pc_off_night will run at 06h00
