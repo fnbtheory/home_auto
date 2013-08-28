@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo 1 > /root/scripts/network_pc/today.txt
