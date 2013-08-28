@@ -32,7 +32,7 @@ A small side project of mine to automate as much as possible in my house that I'
 ### Setup Raspi
 Setup the raspberry pi to send emails
 
-Check raspi.md or
+Check [here](raspi.md) or
 
 	http://www.sbprojects.com/projects/raspberrypi/exim4.php
 
