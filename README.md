@@ -29,6 +29,13 @@ A small side project of mine to automate as much as possible in my house that I'
 
 ## Misc
 
+### Setup Raspi
+Setup the raspberry pi to send emails
+
+Check raspi.md or
+
+	http://www.sbprojects.com/projects/raspberrypi/exim4.php
+
 ### Crontab configs
 I have some scripts run via crontab
 
