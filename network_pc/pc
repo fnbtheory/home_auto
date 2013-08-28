@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ping -c 1 -t 1 10.0.0.3
+
+if [ $? -eq 0 ]; then
+    echo "1";
+    #wakeonlan D4:3D:7E:4E:53:A0;
+else 
+    echo "ip is down";
+fi

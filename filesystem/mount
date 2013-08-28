@@ -1,0 +1,1 @@
+mount -t cifs -o username="user",password="",workgroup="WORKGROUP",file_mode=0777,dir_mode=0777,nobrl //10.0.0.3/sorted Music

@@ -1,0 +1,9 @@
+#!/bin/bash
+ip_original=`curl -s checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'`
+
+ip_new=`cat /root/scripts/network/ip.txt`
+
+if [ "$ip_original" != "$ip_new" ]
+then
+/root/scripts/network/mailip
+fi
