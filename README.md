@@ -46,3 +46,5 @@ I have some scripts run via crontab
 phone.py will run every minute
 
 check_ip will run ever 10 minutes
+
+pc_off_night will run at 06h00
