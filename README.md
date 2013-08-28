@@ -26,3 +26,15 @@ A small side project of mine to automate as much as possible in my house that I'
  	- Everything that involves scripts which interact with other PC's in my house
  - filesystem [not of use yet]
  	- General mounting of file systems
+
+## Misc
+
+### Crontab configs
+I have some scripts run via crontab
+
+	*/1 * * * * python /root/scripts/network_pc/phone.py
+	*/10 * * * * /root/scripts/network/check_ip
+
+phone.py will run every minute
+
+check_ip will run ever 10 minutes
