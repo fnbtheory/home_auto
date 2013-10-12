@@ -44,8 +44,8 @@ Check [here](raspi.md) or
 ### Crontab configs
 I have some scripts run via crontab
 
-	*/1 * * * * python /root/scripts/network_pc/phone.py
-	*/10 * * * * /root/scripts/network/check_ip
-	0 6 * * * /root/scripts/network_pc/pc_off_night
-	0 23 * * * /root/scripts/torrents/switch_on
-	0 15 * * * /root/scripts/torrents/switch_off
+	*/1 * * * * python /root/scripts/network_pc/phone.py &> /dev/null
+	*/10 * * * * /root/scripts/network/check_ip &> /dev/null
+	0 6 * * * /root/scripts/network_pc/pc_off_night &> /dev/null
+	0 23 * * * /root/scripts/torrents/switch_on &> /dev/null
+	0 15 * * * /root/scripts/torrents/switch_off &> /dev/null
