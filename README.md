@@ -41,6 +41,8 @@ Check [here](raspi.md) or
 
 	http://www.sbprojects.com/projects/raspberrypi/exim4.php
 
+or for a very lightweight configuration check [here](ssmtp.md)
+
 ### Crontab configs
 I have some scripts run via crontab
 
