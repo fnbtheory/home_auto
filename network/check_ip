@@ -1,7 +1,10 @@
 #!/bin/bash
-ip_new=`curl -s checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'`
+
+ip_new=`curl -s http://ipecho.net/plain;`
 
 ip_original=`cat /root/scripts/network/ip.txt`
+
+echo $ip_new > ip.txt
 
 if [[ "$ip_original" != "$ip_new" && -n "$ip_new"  ]]
 then
