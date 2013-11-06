@@ -7,15 +7,15 @@ A small side project of mine to automate as much as possible in my house that I'
  	- Switch PC on
  	- Switch off torrents
  	- Switch on lights if dark
- 	- Turn on some music
+ 	- Play some music
  - Send emails when:
  	- The external IP address changes of my torrent server
  	- The ethernet port goes down and up again
 
 ## What's working so far
  - Switching on PC
- - Turning on music
- - Torrents (Using transmission-daemon and transmission-remote | Setup coming soon):
+ - Play music
+ - Torrents (Using transmission-daemon and transmission-remote | Click [here](configs/transmission.md) for the configuration)
  	- Switch on at 23h00
  	- Switch off at 15h00
  - Send emails when:
@@ -37,11 +37,11 @@ A small side project of mine to automate as much as possible in my house that I'
 ### Setup Raspi
 Setup the raspberry pi to send emails
 
-Check [here](raspi.md) or
+Check [here](configs/raspi.md) or visit
 
 	http://www.sbprojects.com/projects/raspberrypi/exim4.php
 
-or for a very lightweight configuration check [here](ssmtp.md)
+or for a very lightweight configuration check [here](configs/ssmtp.md)
 
 ### Crontab configs
 I have some scripts run via crontab

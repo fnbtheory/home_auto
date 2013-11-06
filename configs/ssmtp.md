@@ -1,5 +1,5 @@
 # SSMTP
-
+---
 ## Install
 
 To install and use this functionality (raspbian):
