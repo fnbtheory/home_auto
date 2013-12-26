@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Home auto by fnbtheory</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/fnbtheory/home_auto">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/fnbtheory/home_auto/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/fnbtheory/home_auto/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Home auto</h1>
+          <p>A small side project of mine to automate as much as possible in my house that I'm using with a raspberrypi</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/fnbtheory">fnbtheory</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="home-automation" class="anchor" href="#home-automation"><span class="octicon octicon-link"></span></a>Home Automation</h1>
+
+<p>A small side project of mine to automate as much as possible in my house that I'm using with a Raspberry Pi</p>
+
+<h2>
+<a name="goals" class="anchor" href="#goals"><span class="octicon octicon-link"></span></a>Goals</h2>
+
+<ul>
+<li>When I get home:
+
+<ul>
+<li>Switch PC on</li>
+<li>Switch off torrents</li>
+<li>Switch on lights if dark</li>
+<li>Play some music</li>
+</ul>
+</li>
+<li>Send emails when:
+
+<ul>
+<li>The external IP address changes of my torrent server</li>
+<li>The ethernet port goes down and up again</li>
+</ul>
+</li>
+</ul><h2>
+<a name="whats-working-so-far" class="anchor" href="#whats-working-so-far"><span class="octicon octicon-link"></span></a>What's working so far</h2>
+
+<ul>
+<li>Switching on PC</li>
+<li>Play music</li>
+<li>Torrents (Using transmission-daemon and transmission-remote | Click <a href="configs/transmission.md">here</a> for the configuration)
+
+<ul>
+<li>Switch on at 23h00</li>
+<li>Switch off at 15h00</li>
+</ul>
+</li>
+<li>Send emails when:
+
+<ul>
+<li>The external IP address changes of my torrent server</li>
+<li>The ethernet port goes down and up again</li>
+</ul>
+</li>
+</ul><h2>
+<a name="folder-structure" class="anchor" href="#folder-structure"><span class="octicon octicon-link"></span></a>Folder structure</h2>
+
+<ul>
+<li>networks
+
+<ul>
+<li>Everything that involves the well being of my network</li>
+</ul>
+</li>
+<li>network_pc
+
+<ul>
+<li>Everything that involves scripts which interact with other PC's in my house</li>
+</ul>
+</li>
+<li>filesystem [not of use yet]
+
+<ul>
+<li>General mounting of file systems</li>
+</ul>
+</li>
+<li>torrents
+
+<ul>
+<li>Everything regarding my torrent downloads</li>
+</ul>
+</li>
+</ul><h2>
+<a name="misc" class="anchor" href="#misc"><span class="octicon octicon-link"></span></a>Misc</h2>
+
+<h3>
+<a name="setup-raspi" class="anchor" href="#setup-raspi"><span class="octicon octicon-link"></span></a>Setup Raspi</h3>
+
+<p>Setup the raspberry pi to send emails</p>
+
+<p>Check <a href="configs/raspi.md">here</a> or visit</p>
+
+<pre><code>http://www.sbprojects.com/projects/raspberrypi/exim4.php
+</code></pre>
+
+<p>or for a very lightweight configuration check <a href="configs/ssmtp.md">here</a></p>
+
+<h3>
+<a name="crontab-configs" class="anchor" href="#crontab-configs"><span class="octicon octicon-link"></span></a>Crontab configs</h3>
+
+<p>I have some scripts run via crontab</p>
+
+<pre><code>#*/1 * * * * python /root/scripts/network_pc/phone.py &amp;&gt; /dev/null
+*/30 * * * * /root/scripts/network/check_ip &amp;&gt; /dev/null
+0 6 * * * /root/scripts/network_pc/pc_off_night &amp;&gt; /dev/null
+0 23 * * * /root/scripts/torrents/switch_on &amp;&gt; /dev/null
+0 15 * * * /root/scripts/torrents/switch_off &amp;&gt; /dev/null
+</code></pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
